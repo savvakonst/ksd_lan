@@ -1,0 +1,10 @@
+tnbalance
+==========
+
+.. automodule:: tnbalance
+.. autofunction:: iter_socket
+
+    :members: 
+    :inherited-members:
+    :show-inheritance:
+    :member-order: bysource

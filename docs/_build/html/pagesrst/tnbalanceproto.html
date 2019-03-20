@@ -1,0 +1,639 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tnbalanceproto &#8212; Документация balancedoc </title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="ssss" href="aaaa.html" />
+    <link rel="prev" title="tnbalancelib" href="tnbalancelib.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="aaaa.html" title="ssss"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="tnbalancelib.html" title="tnbalancelib"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация balancedoc </a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tnbalanceproto</a><ul>
+<li><a class="reference internal" href="#id1">Управляющие структуры</a></li>
+<li><a class="reference internal" href="#id2">Описание</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="tnbalancelib.html"
+                        title="предыдущая глава">tnbalancelib</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="aaaa.html"
+                        title="следующая глава">ssss</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pagesrst/tnbalanceproto.rst.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-tnbalanceproto">
+<span id="tnbalanceproto"></span><h1>tnbalanceproto<a class="headerlink" href="#module-tnbalanceproto" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference internal" href="#tnbalanceproto.MODULE_IDENT" title="tnbalanceproto.MODULE_IDENT"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.MODULE_IDENT</span></code></a></p>
+<div class="section" id="id1">
+<h2>Управляющие структуры<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p><a class="reference internal" href="#tnbalanceproto.PROTO_HEADER" title="tnbalanceproto.PROTO_HEADER"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.PROTO_HEADER</span></code></a></p>
+<p><a class="reference internal" href="#tnbalanceproto.CxW_PARAMS" title="tnbalanceproto.CxW_PARAMS"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.CxW_PARAMS</span></code></a></p>
+<p><a class="reference internal" href="#tnbalanceproto.CBW" title="tnbalanceproto.CBW"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.CBW</span></code></a></p>
+<p><a class="reference internal" href="#tnbalanceproto.CSW" title="tnbalanceproto.CSW"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.CSW</span></code></a></p>
+<p><a class="reference internal" href="#tnbalanceproto.DBW" title="tnbalanceproto.DBW"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.DBW</span></code></a></p>
+<p><a class="reference internal" href="#tnbalanceproto.DSW" title="tnbalanceproto.DSW"><code class="xref py py-class docutils literal notranslate"><span class="pre">tnbalanceproto.DSW</span></code></a></p>
+</div>
+<div class="section" id="id2">
+<h2>Описание<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="tnbalanceproto.Flash_HEADER">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">Flash_HEADER</code><a class="headerlink" href="#tnbalanceproto.Flash_HEADER" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.MODULE_IDENT">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">MODULE_IDENT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalanceproto.MODULE_IDENT" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.MODULE_IDENT.u32ID">
+<code class="descname">u32ID</code><a class="headerlink" href="#tnbalanceproto.MODULE_IDENT.u32ID" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.MODULE_IDENT.u16Version">
+<code class="descname">u16Version</code><a class="headerlink" href="#tnbalanceproto.MODULE_IDENT.u16Version" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.MODULE_IDENT.u16SerialNumber">
+<code class="descname">u16SerialNumber</code><a class="headerlink" href="#tnbalanceproto.MODULE_IDENT.u16SerialNumber" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.PROTO_HEADER">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">PROTO_HEADER</code><a class="headerlink" href="#tnbalanceproto.PROTO_HEADER" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.PROTO_HEADER.signature">
+<code class="descname">signature</code><a class="headerlink" href="#tnbalanceproto.PROTO_HEADER.signature" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Идентификатор управляющей структуры</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.PROTO_HEADER.lun">
+<code class="descname">lun</code><a class="headerlink" href="#tnbalanceproto.PROTO_HEADER.lun" title="Ссылка на это определение">¶</a></dt>
+<dd><p>логический номер накопителя в составе сети,
+равен серийному номеру или 0, если адресуются все накопители</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.PROTO_HEADER.reqid">
+<code class="descname">reqid</code><a class="headerlink" href="#tnbalanceproto.PROTO_HEADER.reqid" title="Ссылка на это определение">¶</a></dt>
+<dd><p>уникальный идентификатор запроса, все последующие
+пакеты CS/DB/DS содержат копию этого поля из CB,
+для однозначной идентификации пакетов в составе
+одной транзакции</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.PROTO_HEADER.seqcnt">
+<code class="descname">seqcnt</code><a class="headerlink" href="#tnbalanceproto.PROTO_HEADER.seqcnt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>инкрементальный счётчик в пределах одной
+транзакции увеличивается на единицу с каждым
+переданным/принятым управляющим пакетом;
+предназначен для контроля целостности транзакции
+(отсутствие потери пакетов). То есть,
+если CBW устанавливает seqcnt = 0,
+то ответный CS будет содержать seqcnt = 1,
+если затем следует DB seqcnt = 2,
+ответный DSW seqcnt = 3 и т.д.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.CxW_PARAMS">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">CxW_PARAMS</code><a class="headerlink" href="#tnbalanceproto.CxW_PARAMS" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.CxW_PARAMS.proto">
+<code class="descname">proto</code><a class="headerlink" href="#tnbalanceproto.CxW_PARAMS.proto" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">ctypes.c_uint32*12</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.CBW">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">CBW</code><a class="headerlink" href="#tnbalanceproto.CBW" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.CBW.proto">
+<code class="descname">proto</code><a class="headerlink" href="#tnbalanceproto.CBW.proto" title="Ссылка на это определение">¶</a></dt>
+<dd><p>proto.CB = 0x4243</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.PROTO_HEADER" title="tnbalanceproto.PROTO_HEADER">tnbalanceproto.PROTO_HEADER</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CBW.dataTransferLength">
+<code class="descname">dataTransferLength</code><a class="headerlink" href="#tnbalanceproto.CBW.dataTransferLength" title="Ссылка на это определение">¶</a></dt>
+<dd><p>размер (в байтах)
+предполагаемый для передачи или приёма устройством управления</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CBW.requestCode">
+<code class="descname">requestCode</code><a class="headerlink" href="#tnbalanceproto.CBW.requestCode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>идентификатор команды [0…255]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint8" title="(в Python v2.7)">ctypes.c_uint8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CBW.flags">
+<code class="descname">flags</code><a class="headerlink" href="#tnbalanceproto.CBW.flags" title="Ссылка на это определение">¶</a></dt>
+<dd><p>битовая маска флагов команды
+7 бит- направление передачи данных,
+‘0’ – PC-&gt;TН3, ‘1’ – TН3-&gt;PC
+6..0- зарезервированы
+Если предполагаемый размер блока данных равен 0 значение бита 7 не имеет значения и игнорируется</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint8" title="(в Python v2.7)">ctypes.c_uint8</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CBW.reserved">
+<code class="descname">reserved</code><a class="headerlink" href="#tnbalanceproto.CBW.reserved" title="Ссылка на это определение">¶</a></dt>
+<dd><p>зарезервировано, значение игнорируется</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint16" title="(в Python v2.7)">ctypes.c_uint16</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CBW.params">
+<code class="descname">params</code><a class="headerlink" href="#tnbalanceproto.CBW.params" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Параметры команды, значение
+этих полей зависит от идентификатора команды requestCode</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.CxW_PARAMS" title="tnbalanceproto.CxW_PARAMS">CxW_PARAMS</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.CSW">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">CSW</code><a class="headerlink" href="#tnbalanceproto.CSW" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.CSW.proto">
+<code class="descname">proto</code><a class="headerlink" href="#tnbalanceproto.CSW.proto" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.PROTO_HEADER" title="tnbalanceproto.PROTO_HEADER">tnbalanceproto.PROTO_HEADER</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">proto.CB = 0x5343</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CSW.dataTransferLength">
+<code class="descname">dataTransferLength</code><a class="headerlink" href="#tnbalanceproto.CSW.dataTransferLength" title="Ссылка на это определение">¶</a></dt>
+<dd><p>точный размер (в байтах) для передачи или приёма накопителем, всегда меньше
+или равен CB.length Например, если устройство управления запросило для передачи
+от накопителя 4000 байт данных в CB, однако накопитель имеет только 2000 байт для
+выполнения запроса, в CSW.dataTransferLength будет возвращено 2000 и устройство управления
+должно соответствующим образом cформировать запросы DB/DS</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CSW.status">
+<code class="descname">status</code><a class="headerlink" href="#tnbalanceproto.CSW.status" title="Ссылка на это определение">¶</a></dt>
+<dd><p>статус выполнения команды
+0 – команда выполнена успешно
+не 0– код ошибки
+В случае ненулевого статуса стадия передачи данных DB/DS
+не инициируется накопителем</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.CSW.params">
+<code class="descname">params</code><a class="headerlink" href="#tnbalanceproto.CSW.params" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Дополнительные данные статуса
+выполнения команды</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.CxW_PARAMS" title="tnbalanceproto.CxW_PARAMS">CxW_PARAMS</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.DBW">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">DBW</code><a class="headerlink" href="#tnbalanceproto.DBW" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.DBW.proto">
+<code class="descname">proto</code><a class="headerlink" href="#tnbalanceproto.DBW.proto" title="Ссылка на это определение">¶</a></dt>
+<dd><p>proto.CB = 0x4244</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.PROTO_HEADER" title="tnbalanceproto.PROTO_HEADER">tnbalanceproto.PROTO_HEADER</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.DBW.dataTransferLength">
+<code class="descname">dataTransferLength</code><a class="headerlink" href="#tnbalanceproto.DBW.dataTransferLength" title="Ссылка на это определение">¶</a></dt>
+<dd><p>размер (в байтах) данных содержащихся в текущем пакете &lt;= 1024</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.DBW.status">
+<code class="descname">status</code><a class="headerlink" href="#tnbalanceproto.DBW.status" title="Ссылка на это определение">¶</a></dt>
+<dd><p>0 – блок данных валиден, продолжаем обмен
+не 0 – код ошибки, прекращаем обмен</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.DBW.params">
+<code class="descname">params</code><a class="headerlink" href="#tnbalanceproto.DBW.params" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Зарезервировано</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.CxW_PARAMS" title="tnbalanceproto.CxW_PARAMS">CxW_PARAMS</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.DSW">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">DSW</code><a class="headerlink" href="#tnbalanceproto.DSW" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.DSW.proto">
+<code class="descname">proto</code><a class="headerlink" href="#tnbalanceproto.DSW.proto" title="Ссылка на это определение">¶</a></dt>
+<dd><p>proto.CB = 0x5344</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.PROTO_HEADER" title="tnbalanceproto.PROTO_HEADER">tnbalanceproto.PROTO_HEADER</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.DSW.dataTransferLength">
+<code class="descname">dataTransferLength</code><a class="headerlink" href="#tnbalanceproto.DSW.dataTransferLength" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Резерв</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.DSW.status">
+<code class="descname">status</code><a class="headerlink" href="#tnbalanceproto.DSW.status" title="Ссылка на это определение">¶</a></dt>
+<dd><p>0 – блок данных валиден, продолжаем обмен
+не 0 – код ошибки, прекращаем обмен</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/ctypes.html#ctypes.c_uint32" title="(в Python v2.7)">ctypes.c_uint32</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tnbalanceproto.DSW.params">
+<code class="descname">params</code><a class="headerlink" href="#tnbalanceproto.DSW.params" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Зарезервировано</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#tnbalanceproto.CxW_PARAMS" title="tnbalanceproto.CxW_PARAMS">CxW_PARAMS</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.EX_COMMAND">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">EX_COMMAND</code><a class="headerlink" href="#tnbalanceproto.EX_COMMAND" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.LP_PROTO_HEADER">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">LP_PROTO_HEADER</code><a class="headerlink" href="#tnbalanceproto.LP_PROTO_HEADER" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes._Pointer</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.LP_PROTO_HEADER.contents">
+<code class="descname">contents</code><a class="headerlink" href="#tnbalanceproto.LP_PROTO_HEADER.contents" title="Ссылка на это определение">¶</a></dt>
+<dd><p>the object this pointer points to (read-write)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.LP_CxW_PARAMS">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">LP_CxW_PARAMS</code><a class="headerlink" href="#tnbalanceproto.LP_CxW_PARAMS" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes._Pointer</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.LP_CxW_PARAMS.contents">
+<code class="descname">contents</code><a class="headerlink" href="#tnbalanceproto.LP_CxW_PARAMS.contents" title="Ссылка на это определение">¶</a></dt>
+<dd><p>the object this pointer points to (read-write)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.LP_CBW">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">LP_CBW</code><a class="headerlink" href="#tnbalanceproto.LP_CBW" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes._Pointer</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.LP_CBW.contents">
+<code class="descname">contents</code><a class="headerlink" href="#tnbalanceproto.LP_CBW.contents" title="Ссылка на это определение">¶</a></dt>
+<dd><p>the object this pointer points to (read-write)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalanceproto.LP_CSW">
+<em class="property">class </em><code class="descclassname">tnbalanceproto.</code><code class="descname">LP_CSW</code><a class="headerlink" href="#tnbalanceproto.LP_CSW" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes._Pointer</span></code></div></blockquote>
+<dl class="attribute">
+<dt id="tnbalanceproto.LP_CSW.contents">
+<code class="descname">contents</code><a class="headerlink" href="#tnbalanceproto.LP_CSW.contents" title="Ссылка на это определение">¶</a></dt>
+<dd><p>the object this pointer points to (read-write)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="aaaa.html" title="ssss"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="tnbalancelib.html" title="tnbalancelib"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация balancedoc </a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Sv.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>

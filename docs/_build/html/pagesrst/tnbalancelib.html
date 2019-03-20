@@ -1,0 +1,372 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tnbalancelib &#8212; Документация balancedoc </title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="tnbalanceproto" href="tnbalanceproto.html" />
+    <link rel="prev" title="tnbalance" href="tnbalance.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="tnbalanceproto.html" title="tnbalanceproto"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="tnbalance.html" title="tnbalance"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация balancedoc </a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tnbalancelib</a><ul>
+<li><a class="reference internal" href="#id1">Функции</a></li>
+<li><a class="reference internal" href="#id2">Классы</a></li>
+<li><a class="reference internal" href="#id3">Описание</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="tnbalance.html"
+                        title="предыдущая глава">tnbalance</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="tnbalanceproto.html"
+                        title="следующая глава">tnbalanceproto</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pagesrst/tnbalancelib.rst.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-tnbalancelib">
+<span id="tnbalancelib"></span><h1>tnbalancelib<a class="headerlink" href="#module-tnbalancelib" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Функции<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p><a class="reference internal" href="#tnbalancelib.is_structure" title="tnbalancelib.is_structure"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.is_structure()</span></code></a></p>
+<p><a class="reference internal" href="#tnbalancelib.send_request" title="tnbalancelib.send_request"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.send_request()</span></code></a></p>
+<p><a class="reference internal" href="#tnbalancelib.wr_exchange_buffer" title="tnbalancelib.wr_exchange_buffer"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.wr_exchange_buffer()</span></code></a></p>
+<p><a class="reference internal" href="#tnbalancelib.rd_exchange_buffer" title="tnbalancelib.rd_exchange_buffer"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.rd_exchange_buffer()</span></code></a></p>
+</div>
+<div class="section" id="id2">
+<h2>Классы<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p><a class="reference internal" href="#tnbalancelib.is_structure" title="tnbalancelib.is_structure"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.is_structure()</span></code></a></p>
+<p><a class="reference internal" href="#tnbalancelib.send_request" title="tnbalancelib.send_request"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.send_request()</span></code></a></p>
+<p><a class="reference internal" href="#tnbalancelib.wr_exchange_buffer" title="tnbalancelib.wr_exchange_buffer"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.wr_exchange_buffer()</span></code></a></p>
+<p><a class="reference internal" href="#tnbalancelib.rd_exchange_buffer" title="tnbalancelib.rd_exchange_buffer"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.rd_exchange_buffer()</span></code></a></p>
+</div>
+<div class="section" id="id3">
+<h2>Описание<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="function">
+<dt id="tnbalancelib.is_structure">
+<code class="descclassname">tnbalancelib.</code><code class="descname">is_structure</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.is_structure" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>obj</strong> (<em>любой тип данных</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body">2 если obj - класса  наследованный от  Structure,<p>1 если obj - экземпляр класса  наследованного от  Structure,</p>
+<p>0 в остальных случаях</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Тип результата:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnbalancelib.send_request">
+<code class="descclassname">tnbalancelib.</code><code class="descname">send_request</code><span class="sig-paren">(</span><em>mod</em>, <em>request</em>, <em>request_type=1</em>, <em>params=&lt;tnbalanceproto.CxW_PARAMS object&gt;</em>, <em>data_len=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.send_request" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mod</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.EX_COMMAND" title="tnbalanceproto.EX_COMMAND"><em>tnbalanceproto.EX_COMMAND</em></a>) – </li>
+<li><strong>N</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)"><em>int</em></a>) – </li>
+<li><strong>data</strong> (<em>экземпляр класса наследованного от  Structure</em><em> ,</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(в Python v2.7)"><em>str</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first">0 - транзакция успешна , не 0 -код ошибки</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Тип результата:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnbalancelib.wr_exchange_buffer">
+<code class="descclassname">tnbalancelib.</code><code class="descname">wr_exchange_buffer</code><span class="sig-paren">(</span><em>mod</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.wr_exchange_buffer" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mod</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.EX_COMMAND" title="tnbalanceproto.EX_COMMAND"><em>tnbalanceproto.EX_COMMAND</em></a>) – </li>
+<li><strong>data</strong> (<em>экземпляр класса наследованного от  Structure</em><em> ,</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(в Python v2.7)"><em>str</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first">0 - транзакция успешна , не 0 -код ошибки</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Тип результата:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnbalancelib.rd_exchange_buffer">
+<code class="descclassname">tnbalancelib.</code><code class="descname">rd_exchange_buffer</code><span class="sig-paren">(</span><em>mod</em>, <em>data=None</em>, <em>N=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.rd_exchange_buffer" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mod</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.EX_COMMAND" title="tnbalanceproto.EX_COMMAND"><em>tnbalanceproto.EX_COMMAND</em></a>) – </li>
+<li><strong>data</strong> (<em>класс наследованный от  Structure</em>) – </li>
+<li><strong>N</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)"><em>int</em></a>) – размер принимаемых данных , если параметр  data-определен то по умолчанию N=sizeof(data) .
+if N&gt;sizeof(data): N=N  else N=sizeof(data)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><em>str/Structure</em> – экземпляр класса data ,если data
+наследованн от Structure ,в
+противном случае будет возвращена строка (str) длинной N</li>
+<li><em>int</em> – 0 - транзакция успешна , не 0 -код ошибки</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="tnbalancelib.CONNECTED_DEVICE">
+<em class="property">class </em><code class="descclassname">tnbalancelib.</code><code class="descname">CONNECTED_DEVICE</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.CONNECTED_DEVICE" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>address</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(в Python v2.7)"><em>str</em></a><em> , </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)"><em>int</em></a>) – по умолчанию („192.168.0.7“, 4880)</li>
+<li><strong>socket</strong> (<em>so.socket</em>) – не рекомендуется использовать</li>
+<li><strong>csw</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.CSW" title="tnbalanceproto.CSW"><em>tnbalanceproto.CSW</em></a>) – задает идентификатор модуля .</li>
+<li><strong>wLun</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)"><em>int</em></a>) – задает дентификатор модуля , если не используется csw</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tnbalancelib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CD</span><span class="o">=</span><span class="n">CONNECTED_DEVICE</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">CD</span>
+<span class="go">serial=0</span>
+<span class="go">addres=(&#39;255.255.255.255&#39;, 4880)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">,</span><span class="n">error_code</span><span class="o">=</span> <span class="n">CONNECTED_DEVICE</span><span class="p">()</span><span class="o">.</span><span class="n">send_request</span><span class="p">(</span><span class="n">PING</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">d</span> <span class="p">,</span> <span class="n">error_code</span>
+<span class="go">{(&#39;192.168.0.7&#39;, 4880): &lt;tnbalanceproto.CSW object at 0x0000000002FFB748&gt;} 0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">devices</span><span class="o">=</span><span class="p">[</span><span class="n">CONNECTED_DEVICE</span><span class="p">(</span><span class="n">csw</span><span class="o">=</span><span class="n">csw</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">csw</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">devices</span>
+<span class="go">[&lt;tnbalancelib.CONNECTED_DEVICE object at 0x0000000002F30648&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">devices</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">k</span><span class="o">=</span><span class="mi">0</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">i</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="gp">... </span>    <span class="k">while</span> <span class="n">k</span><span class="o">&lt;</span><span class="n">MAX_SLOTS_NUMBER</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">cxw</span><span class="o">=</span><span class="n">CxW_PARAMS</span><span class="p">()</span>
+<span class="gp">... </span>       <span class="n">cxw</span><span class="o">.</span><span class="n">u32</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;41&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">24</span><span class="o">|</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="o">|</span><span class="mi">8</span>
+<span class="gp">... </span>       <span class="n">s</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">send_request</span><span class="p">(</span><span class="n">MODULE_REQUEST_</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">cxw</span><span class="p">)</span>
+<span class="gp">... </span>       <span class="k">if</span> <span class="n">status</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>           <span class="n">o</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">rd_exchange_buffer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">MODULE_IDENT</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mo">06</span><span class="p">)</span>
+<span class="gp">... </span>           <span class="k">print</span> <span class="n">o</span>
+<span class="gp">... </span>           <span class="n">k</span><span class="o">+=</span><span class="mi">1</span> <span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+
+<span class="go">serial=7</span>
+<span class="go">addres=(&#39;192.168.0.7&#39;, 4880)</span>
+<span class="go">        Идентификатор модуля=SC01</span>
+<span class="go">        Версия=0x100</span>
+<span class="go">        Серийный номер=0x1</span>
+
+<span class="go">        Идентификатор модуля=AD32</span>
+<span class="go">        Версия=0x116</span>
+<span class="go">        Серийный номер=0x1f</span>
+
+<span class="go">serial=21</span>
+<span class="go">addres=(&#39;192.168.0.21&#39;, 4880)</span>
+<span class="go">        Идентификатор модуля=TS02</span>
+<span class="go">        Версия=0x23a</span>
+<span class="go">        Серийный номер=0x1</span>
+
+<span class="go">        Идентификатор модуля=TS02</span>
+<span class="go">        Версия=0x302</span>
+<span class="go">        Серийный номер=0x16</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="tnbalancelib.CONNECTED_DEVICE.send_request">
+<code class="descname">send_request</code><span class="sig-paren">(</span><em>request</em>, <em>request_type=1</em>, <em>params=&lt;tnbalanceproto.CxW_PARAMS object&gt;</em>, <em>data_len=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.CONNECTED_DEVICE.send_request" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mod</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.EX_COMMAND" title="tnbalanceproto.EX_COMMAND"><em>tnbalanceproto.EX_COMMAND</em></a>) – </li>
+<li><strong>N</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)"><em>int</em></a>) – </li>
+<li><strong>data</strong> (<em>экземпляр класса наследованного от  Structure</em><em> ,</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(в Python v2.7)"><em>str</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first">0 - транзакция успешна , не 0 -код ошибки</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Тип результата:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tnbalancelib.CONNECTED_DEVICE.wr_exchange_buffer">
+<code class="descname">wr_exchange_buffer</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.CONNECTED_DEVICE.wr_exchange_buffer" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mod</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.EX_COMMAND" title="tnbalanceproto.EX_COMMAND"><em>tnbalanceproto.EX_COMMAND</em></a>) – </li>
+<li><strong>data</strong> (<em>экземпляр класса наследованного от  Structure</em><em> ,</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(в Python v2.7)"><em>str</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first">0 - транзакция успешна , не 0 -код ошибки</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Тип результата:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tnbalancelib.CONNECTED_DEVICE.rd_exchange_buffer">
+<code class="descname">rd_exchange_buffer</code><span class="sig-paren">(</span><em>data=None</em>, <em>N=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tnbalancelib.CONNECTED_DEVICE.rd_exchange_buffer" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mod</strong> (<a class="reference internal" href="tnbalanceproto.html#tnbalanceproto.EX_COMMAND" title="tnbalanceproto.EX_COMMAND"><em>tnbalanceproto.EX_COMMAND</em></a>) – </li>
+<li><strong>data</strong> (<em>класс наследованный от  Structure</em>) – </li>
+<li><strong>N</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(в Python v2.7)"><em>int</em></a>) – размер принимаемых данных , если параметр  data-определен то по умолчанию N=sizeof(data) .
+if N&gt;sizeof(data): N=N  else N=sizeof(data)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><em>str/Structure</em> – экземпляр класса data ,если data
+наследованн от Structure ,в
+противном случае будет возвращена строка (str) длинной N</li>
+<li><em>int</em> – 0 - транзакция успешна , не 0 -код ошибки</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<p><a class="reference internal" href="#tnbalancelib.wr_exchange_buffer" title="tnbalancelib.wr_exchange_buffer"><code class="xref py py-func docutils literal notranslate"><span class="pre">tnbalancelib.wr_exchange_buffer()</span></code></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="tnbalanceproto.html" title="tnbalanceproto"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="tnbalance.html" title="tnbalance"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация balancedoc </a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Sv.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>

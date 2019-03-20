@@ -1,0 +1,88 @@
+﻿ssss
+================
+
+
+
+.. symbolator::
+  	:alt: Alt text
+  	:align: center
+  	:caption: Caption text
+  	:symbolator_cmd: C:\Python27.14\Scripts\symbolator.exe
+  	:name: umspia-example
+
+
+	module umspia
+	#(
+	  parameter CLKDIVs = 2
+	)
+	(
+	  input wire          clk,
+	  input wire          reset,
+		 
+	  input wire [5:0]    cntssa,
+	  
+	  input wire          write,
+	  input wire [31:0]   writedata,
+	  
+	  input wire          read,
+	  output wire [31:0]  readdata, 
+
+	  output wire         busy,
+
+	  output wire         sck,  
+	  input wire          si,
+	  output wire         so
+	);
+
+	  localparam _CW = $clog2(CLKDIV);
+	  reg [_CW-1:0] r_div;
+
+	  wire n_fall = (r_div == (CLKDIV - 1));
+	  wire n_busy = (r_cnt != 0);
+	  
+	  reg [5:0]   r_cnt;
+	  reg [31:0]  r_ds;
+	  reg         r_fc;
+	  
+	  always@(posedge clk or posedge reset)
+		 if (reset) begin
+			r_cnt   <= 0;
+			r_fc    <= 1;
+			r_div   <= 0;
+			r_ds    <= 0;
+		 end
+		 else begin
+			r_fc    <= !n_busy || n_done;
+			
+			if      (n_busy) begin
+			  r_div <= r_div + 1'b1;
+			  
+			  if (n_fall) begin
+				 r_cnt <= r_cnt - 1'b1;
+				 r_ds <= { r_ds[30:0], si };
+			  end
+			end
+			else if (write || read) begin
+			  r_cnt   <= cnt;
+			  // r_div  <= 1'b1;
+			  r_div   <= 0;
+			  r_ds    <= writedata;
+			end
+		 end
+
+	  wire n_done = (r_cnt == 1) && n_fall;
+
+	  assign sck  = r_div[_CW-1];
+	  assign busy = (write || read) && !n_done;
+	  // assign so   = r_fc ? writedata[31] : r_ds[31];
+	  assign so = r_ds[31];
+	  
+	  assign readdata = { r_ds[30:0], si };
+	  
+
+	endmodule
+
+
+
+
+
