@@ -8,6 +8,9 @@ uint8_t=ctypes.c_uint8
 uint16_t=ctypes.c_uint16
 uint32_t=ctypes.c_uint32
 
+int8_t=ctypes.c_int8
+int16_t=ctypes.c_int16
+int32_t=ctypes.c_int32
 
 
 
@@ -40,12 +43,14 @@ class TN3_DATE(Structure):
     _fields_=[  ('wYear',uint16_t),
                 ('bMonth',uint8_t),
                 ('bDay',uint8_t)]
-
+    _pack_=1
+    
 class TN3_TIME(Structure):
     _fields_=[  ('bHour',uint8_t),
                 ('bMinute',uint8_t),
                 ('bSecond',uint8_t),
                 ('bCentisecond',uint8_t)]
+    _pack_=1    
 
 class TN3_TASK_HEADER(Structure):
     _fields_=[  ('dwTaskSize',uint32_t),
@@ -61,7 +66,8 @@ class TN3_TASK_HEADER(Structure):
                 ('dwDeviceID',uint32_t),
                 ('wSyncSrc',uint16_t),
                 ('Reserved_c',uint8_t*14)]
-
+    _pack_=1
+    
 z="""
 class U_CHANNEL_ANLG0(Union):
     _fields_=[  ('bDenominatorR',uint8_t),
@@ -102,19 +108,61 @@ class CHANNEL_ANLG_SC01 (Structure):
                 ('bDenominatorVb',uint8_t),
                 ('bDenominatorVi',uint8_t),
                 ('bType',uint8_t)]
-
+    _pack_=1
 
 class SETTINGS_ANLG_SC01(Structure):
     _fields_=[  ('dwFrequencyOfADC',uint32_t),
                 ('dwVoltageBase',uint32_t),
                 ('dwVoltageIn',uint32_t),
                 ('cnl',CHANNEL_ANLG_SC01*4)]
-
+    _pack_=1
+    
 class MODULE_SC01(Structure):
     _fields_=[  ('smt',STANDART_MODULE_TASK),
                 ('adc',SETTINGS_ANLG_SC01)]
+    _pack_=1
 
-modules=[MODULE_SC01]
+
+class CHANNEL_ANLG_AD32 (Structure):
+    _fields_=[  ('lower_voltage_limit',uint8_t),
+                ('upper_limit_of_voltage',uint8_t),
+                ('decimation_code',uint8_t),
+                ('reserved',uint8_t)]
+    _pack_=1
+
+class SETTINGS_ANLG_AD32(Structure):
+    _fields_=[  ('dwFrequencyOfADC',uint32_t),
+                ('cnl',CHANNEL_ANLG_AD32*32)]
+    _pack_=1
+    
+class MODULE_AD32(Structure):
+    _fields_=[  ('smt',STANDART_MODULE_TASK),
+                ('adc',SETTINGS_ANLG_AD32)]
+    _pack_=1
+
+
+class CHANNEL_ANLG_A01_ (Structure):
+    _fields_=[  ('frequency_code',uint8_t),
+                ('reserved',uint8_t*2),
+                ('flags',uint8_t),
+                ('upper_limit_of_voltage',int32_t),
+                ('lower_voltage_limit',int32_t),
+                ('ureserved',uint32_t)]
+    _pack_=1
+
+
+class SETTINGS_ANLG_A01_(Structure):
+    _fields_=[  ('cnl',CHANNEL_ANLG_A01_*32)]
+    _pack_=1
+
+    
+class MODULE_A01_(Structure):
+    _fields_=[  ('smt',STANDART_MODULE_TASK),
+                ('adc',SETTINGS_ANLG_A01_)]
+    _pack_=1
+
+
+modules=[MODULE_SC01,MODULE_AD32,MODULE_A01_]
 #print ctypes.c_uint32.from_buffer_copy(modules[0].__name__.split("_")[-1]).value
-modules={i.__name__.split("_")[-1]:i for i in modules}
+modules={i.__name__.split("_", 1)[-1]:i for i in modules}
 

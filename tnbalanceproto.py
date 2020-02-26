@@ -33,6 +33,7 @@ import ctypes
 from tnstruct import *
 import sys
 import time
+from tncommon import *
 
 GET_ID=int("41",16)
 GET_TASK=int("42",16)
@@ -184,8 +185,8 @@ class MODULE_IDENT(Structure):
         if error_code != 0:
             return None,error_code
 
-        # g_ExBuffer - ╨▒╤Г╤Д╨╡╤А ╨┤╨░╨╜╨╜╤Л╤Е 1024 ╨▒╨░╨╣╤В╨░ (0x48 ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М ╨┤╨░╨╜╨╜╤Л╨╡ ╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╤Г )  (0x08 ╨┐╤А╨╕╨╜╤П╤В╤М ╨┤╨░╨╜╨╜╤Л╨╡ ╤Б ╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨░)
-        # g_ExCommand - ╨▒╤Г╤Д╨╡╤А ╨┤╨╛╨┐_╨║╨╛╨╝╨░╨╜╨┤  32 ╨▒╨░╨╣╤В╨░ (0x09 ╤Б╤З╨╕╤В╨░╤В╤М ╨┤╨╛╨┐ ╨║╨╛╨╝╨░╨╜╨┤╤Г)
+        # g_ExBuffer - буфер данных 1024 байта (0x48 отправить данные компьютеру ) (0x08 принять данные с компьютера)
+        # g_ExCommand - буфер доп_команд 32 байта (0x09 считать доп команду)
         return self.send_ex_command_without_data(command)
 
 
@@ -199,9 +200,53 @@ class MODULE_IDENT(Structure):
         return self.device.rd_exchange_buffer(data=MODULE_STATUS)
 
 
+    def write_calibration(self,addres=0,offset=4,data=''):
+        addres=addres
+        ex_r=EX_MODULE_REQUEST(0x01,[addres,offset,]) # 0x01 write data
+        csw, status =self.send_ex_command_with_data(ex_r,data)
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
 
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+
+    def read_calibration(self,addres=0,offset=4):
+        addres=addres
+        ex_r=EX_MODULE_REQUEST(0x00,[addres,offset,]) # 0x00 read data
+        csw,status=self.send_ex_command_without_data(ex_r)
+
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
 
     def write_eeprom(self,addres=0,data=''):
+        if is_structure(data) or hasattr(data,"__sizeof__"):
+            data=struct2string(data)
         addres=addres
         ex_r=EX_MODULE_REQUEST(0x22,[addres]) # 0x23 read data
         csw, status =self.send_ex_command_with_data(ex_r,data)
@@ -226,6 +271,142 @@ class MODULE_IDENT(Structure):
     def read_eeprom(self,addres=0):
         addres=addres
         ex_r=EX_MODULE_REQUEST(0x23,[addres,]) # 0x23 read data
+        csw,status=self.send_ex_command_without_data(ex_r)
+
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+
+    def set_gain(self,data=''):
+        if is_structure(data)or hasattr(data,"__sizeof__"):
+            data=str(struct2string_(data))
+            
+        ex_r=EX_MODULE_REQUEST(0x06,[0,]) # 0x06 set gain
+        csw, status =self.send_ex_command_with_data(ex_r,data)
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+
+    def set_sample_nums(self,nums=128):
+        data=b'aaaa'
+            
+        ex_r=EX_MODULE_REQUEST(0x10,[nums,]) # 0x10 set gain
+        csw, status =self.send_ex_command_with_data(ex_r,data)
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+    def read_sample_nums(self,addres=0):
+        ex_r=EX_MODULE_REQUEST(0x11,[0,]) # 0x11 read sample nums
+        csw,status=self.send_ex_command_without_data(ex_r)
+
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+
+
+    def set_custom_params(self,command=0x0,param=[0,]):
+        data=b'aaaa'
+            
+        ex_r=EX_MODULE_REQUEST(command,param) # 0x10 set gain
+        csw, status =self.send_ex_command_with_data(ex_r,data)
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+    def get_custom_params(self,command=0x0,param=[0,]):
+        ex_r=EX_MODULE_REQUEST(command,param) # 0x11 read sample nums
+        csw,status=self.send_ex_command_without_data(ex_r)
+
+        if status != 0:
+            return None,status
+        #print "sd"
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        #print "Command=",s.dwCommand ," , Status=",s.dwStatus
+
+        data_len=1024
+        cxw = MODULE_REQUEST(GET_EX_DATA_TO_PC, self.number, data_len)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status != 0:
+            return None,status
+
+        return self.device.rd_exchange_buffer(N=data_len)
+
+
+
+    def read_samples(self,addres=0):
+        ex_r=EX_MODULE_REQUEST(0x04,[0,]) # 0x04 read samples
         csw,status=self.send_ex_command_without_data(ex_r)
 
         if status != 0:

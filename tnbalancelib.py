@@ -27,85 +27,15 @@ __docformat__ = "restructuredtext"
 #from ctypes import string_at,addressof,c_uint8, c_uint16, c_uint32
 #from ctypes.wintypes import  BYTE, WORD, DWORD
 #import ctypes as ct
+from tncommon import *
 from tnbalanceproto import *
+
 
 import socket as so
 import inspect
 
 
 
-
-
-
-
-
-
-
-def read_struct(cw):
-    print type(cw)
-    print u"сигнатура" , hex(cw.proto.signature)
-    print u"серийный номер" , hex(cw.proto.lun)
-    print u"идентификатор запроса" , hex(cw.proto.reqid)
-    print u"seqcnt" , hex(cw.proto.seqcnt)
-    print u""
-    if cw.proto.signature==CSW_SIG:
-        print u"\tразмер (в байтах) " ,hex(cw.dataTransferLength)
-        print u"\tстатус" ,hex(cw.status)
-    elif cw.proto.signature==CBW_SIG: 
-        print u"\tразмер (в байтах) " ,hex(cw.dataTransferLength)
-        print u"\t" ,hex(cw.status)
-        print u"\t" ,hex(cw.flags)
-        print u"\t" ,hex(cw.reserved[0])
-
-
-def struct2string(cbw):
-    sizeof_cbw=sizeof(cbw)
-    return string_at(addressof(cbw),sizeof_cbw)
-
-def is_structure(obj):
-    """
-    Parameters
-    ----------
-    obj : любой тип данных
-
-    Returns  
-    -------
-        int :
-            2 если obj - класса  наследованный от  Structure, \n
-            1 если obj - экземпляр класса  наследованного от  Structure,\n
-            0 в остальных случаях
-    """
-    if hasattr(obj,"__bases__"):
-        base=obj.__bases__
-        if len(base)>0:
-            if obj.__bases__.count(Structure):
-                return 2   
-    elif hasattr(obj.__class__,"__bases__"):
-        base=obj.__class__.__bases__
-        if len(base)>0:
-            if obj.__class__.__bases__.count(Structure):
-                return 1
-
-            
-    
-    return 0
-
-def print_struct(struct,N=0):
-    str_=""
-    if hasattr(struct,"__len__")and N>0:
-        s="{"
-        for i in struct:
-            s=s+"\n"+" "*N+print_struct(i,N+1)
-        return s+"}"
-    elif 1==is_structure(struct):
-        s = " " * N+"{\n"
-        s = " " * N + "{\n"
-        for i in struct._fields_ :
-            h=getattr(struct,i[0])
-            s = s+" "*N+i[0]+"=" +print_struct(h, N + 1)+"\n"
-        return s[0:-1]+" "* N+"}"
-    else :
-        return ""+str(struct)+""
 
 
 def send_request(mod,request,request_type=NO_DATA,params=CxW_PARAMS(),data_len=0):
@@ -439,15 +369,20 @@ class CONNECTED_DEVICE(Structure):
         m=self.modules.get(k, None)
         if type(m)==type(None):
             m=self.get_module_id(k)
+        print 
         mod = modules.get(struct2string_(uint32_t(m.dwID)), None)
-
+        print "MOD:",mod ,", sizeof",sizeof(mod)
         if type(mod) == type(None):
             raise module_error("tnstruct.py не содержит описания структуры задания для "+struct2string_(uint32_t(m.dwID)))
         else:
             cxw = MODULE_REQUEST(GET_TASK, k, sizeof(mod))
             s, status = self.send_request(MODULE_REQUEST_, params=cxw)
+            
             if status == 0:
                 o, h = self.rd_exchange_buffer(data=mod)
+            else :
+                print 'error-'+hex(status)
+                
             return o
 
 
