@@ -35,7 +35,9 @@ import socket as so
 import inspect
 
 
-
+# iStatus = iorequest_sync(h, request::READ_TASK_MEMORY, 0x80 / * hostread * /, p   , uSize, & uTres       , & cbw_params, NULL, TIMEOUT);   ReadTaskMemory
+# iStatus = iorequest_sync(h, request::MIB_EXT_EXECUTE , 0x00 / *          * /, NULL, 0    , & uTransferred, & cbw_params, NULL, TIMEOUT);   MIB_Exec
+# iStatus = iorequest_sync(h, request::MIB_EXT_RWBUFFER, 0x80 / * hostread * /, data, iSize, & uTransferred, NULL        , NULL, TIMEOUT);   MIB_ReadBuffer
 
 
 def send_request(mod,request,request_type=NO_DATA,params=CxW_PARAMS(),data_len=0):
@@ -61,9 +63,8 @@ def send_request(mod,request,request_type=NO_DATA,params=CxW_PARAMS(),data_len=0
     header=PROTO_HEADER(CBW_SIG,mod.wLun,mod.reqid,seqcnt)
 
     temp=request_type & PC_TH3
-    #print  [type(x) for x in [header, data_len, request, temp, params]]
-    #print request
-    cbw=CBW(header,data_len,request,request_type&PC_TH3,params=params)
+
+    cbw=CBW(header,data_len,request,request_type|PC_TH3,params=params)
     string = struct2string(cbw)
     mod.so.sendto(string, 0,  mod.saCtl)
     
@@ -90,8 +91,8 @@ def send_request(mod,request,request_type=NO_DATA,params=CxW_PARAMS(),data_len=0
             return error_code,inspect.currentframe().f_lineno
 
         if not( (csw.status==0 )& (csw.proto.reqid ==mod.reqid) & (csw.proto.seqcnt==seqcnt) ):
+            #print  struct2txt(csw)
             return error_code ,inspect.currentframe().f_lineno
-    
     return csw ,0
     
 
@@ -152,7 +153,7 @@ def wr_exchange_buffer(mod,data):
     return inspect.currentframe().f_lineno
 
 
-def rd_exchange_buffer(mod,data=None,N=0):   
+def rd_exchange_buffer(mod,data=None,N=0):
     """
     Parameters
     ----------
@@ -231,8 +232,75 @@ def rd_exchange_buffer(mod,data=None,N=0):
         return data.from_buffer_copy(string[0:sizeof(data)]),0
     else :
         return string,0
-        
 
+
+def send_request_rd(mod,request,request_type=NO_DATA,params=CxW_PARAMS(),data=None,data_len=0):
+
+    N=data_len
+    mod.reqid += 1
+    seqcnt = 0
+    sizeof_DBW = sizeof(DBW)
+    error_code = ''
+
+    if is_structure(data):
+        data_len = sizeof(data)
+        if N > data_len:
+            data_len = N
+    elif N > 0:
+        data_len = N
+    else:
+        return error_code, inspect.currentframe().f_lineno
+
+
+
+
+
+
+
+    header=PROTO_HEADER(CBW_SIG,mod.wLun,mod.reqid,seqcnt)
+    cbw=CBW(header,data_len,RW_EXCHANGE_BUFFER, TH3_PC            )
+    cbw=CBW(header,data_len,request           ,request_type|PC_TH3,params=params)
+
+    mod.so.sendto(struct2string(cbw), 0, mod.saCtl)
+    try:
+        str_, k = mod.so.recvfrom(sizeof_cbw)
+    except:
+        return error_code, inspect.currentframe().f_lineno
+
+    csw = CSW.from_buffer_copy(str_)
+    seqcnt += 1
+
+    if not ((csw.status == 0) & (csw.proto.reqid == mod.reqid) & (csw.proto.seqcnt == seqcnt)):
+        return error_code, inspect.currentframe().f_lineno
+
+    received_data_len = 0
+    string = ''
+    while data_len > received_data_len:
+        try:
+            str_, k = mod.so.recvfrom(1056 * 2)
+        except:
+            return error_code, inspect.currentframe().f_lineno
+
+        seqcnt += 1
+        dbw = DBW.from_buffer_copy(str_[0:sizeof_dbw])
+
+        if not ((dbw.status == 0) & (dbw.proto.reqid == mod.reqid) & (dbw.proto.seqcnt == seqcnt)):
+            return error_code, inspect.currentframe().f_lineno
+
+        string = string + str_[sizeof_dbw:sizeof_dbw + dbw.dataTransferLength]
+        received_data_len += dbw.dataTransferLength
+
+        seqcnt += 1
+        header = PROTO_HEADER(DSW_SIG, mod.wLun, mod.reqid, seqcnt)
+        dsw = DSW(header, dbw.dataTransferLength)
+        mod.so.sendto(struct2string(dsw), 0, mod.saCtl)
+
+    if is_structure(data) == 1:
+        return data.__class__.from_buffer_copy(string[0:sizeof(data)]), 0
+    elif is_structure(data) == 2:
+        return data.from_buffer_copy(string[0:sizeof(data)]), 0
+    else:
+        return string, 0
     
 
 class CONNECTED_DEVICE(Structure):
@@ -305,6 +373,7 @@ class CONNECTED_DEVICE(Structure):
 
     
     send_request=send_request
+    send_request_rd=send_request_rd
     wr_exchange_buffer=wr_exchange_buffer
     rd_exchange_buffer=rd_exchange_buffer
     
@@ -353,6 +422,18 @@ class CONNECTED_DEVICE(Structure):
                 self.modules.update({k: o})
             k += 1
         return self.modules
+
+    def get_main_module(self,data_len=0):
+        cxw = MODULE_REQUEST(0, 0, 0)
+        s, status = self.send_request_rd(TASK_MEMORY_REQUEST,0x80 ,params=cxw,data_len=data_len)
+        #print status,s
+        if status == 0:
+            #print "status"
+            #o, status = self.rd_exchange_buffer()
+            print "status",status
+            return s
+        return "err"
+
 
     def get_module_id(self,k):
 

@@ -13,6 +13,12 @@ int16_t=ctypes.c_int16
 int32_t=ctypes.c_int32
 
 
+def setCheckSumm(self):
+    self.smt.wCheckSumm = 0
+    pBuffAll = ctypes.string_at(ctypes.addressof(self), sizeof(self))
+    h = sum(list((uint16_t * int(len(pBuffAll) / 2)).from_buffer_copy(pBuffAll))) % 2 ** 16  # -self.wCheckSumm
+    self.smt.wCheckSumm = (2 ** 16 - h) % 2 ** 16
+    return (self.smt.wCheckSumm)
 
 class module_error(Exception):
     def __init__(self,text):
@@ -141,6 +147,9 @@ class MODULE_AD32(Structure):
     _pack_=1
 
 
+
+
+
 class CHANNEL_ANLG_A01_ (Structure):
     _fields_=[  ('frequency_code',uint8_t),
                 ('reserved',uint8_t*2),
@@ -162,7 +171,76 @@ class MODULE_A01_(Structure):
     _pack_=1
 
 
-modules=[MODULE_SC01,MODULE_AD32,MODULE_A01_]
+
+
+
+
+
+class CHANNEL_ANLG_IC06(Structure):
+    _fields_ = [('frequency_code', uint8_t),
+                ('reserved', uint8_t * 2),
+                ('flags', uint8_t),
+                ('upper_limit_of_voltage', int32_t),
+                ('lower_voltage_limit', int32_t),
+                ('ureserved', uint32_t)]
+    _pack_ = 1
+
+
+class SETTINGS_ANLG_IC06(Structure):
+    _fields_ = [('cnl', CHANNEL_ANLG_A01_ * 32)]
+    _pack_ = 1
+
+
+class MODULE_IC06(Structure):
+    _fields_ = [('smt', STANDART_MODULE_TASK),
+                ('adc', SETTINGS_ANLG_A01_)]
+    _pack_ = 1
+
+
+
+s="""uint8_t	frequencyFp
+uint8_t	frequencyFn
+uint8_t	frequencyTp
+uint8_t	frequencyTn
+uint8_t	frequencyDp
+uint8_t	frequencyDn
+uint8_t	reserved
+uint8_t	flags
+int32_t	voltageP
+int32_t	voltageN
+int32_t	filter"""
+s=[i.split("\t") for i in s.split("\n")]
+st=""
+for i in s: st+="\t\t\t('"+i[1]+"',"+i[0]+"),\n"
+
+class CHANNEL_D01_(Structure):
+    _fields_ = [('frequencyFp', uint8_t),
+                ('frequencyFn', uint8_t),
+                ('frequencyTp', uint8_t),
+                ('frequencyTn', uint8_t),
+                ('frequencyDp', uint8_t),
+                ('frequencyDn', uint8_t),
+                ('reserved', uint8_t),
+                ('flags', uint8_t),
+                ('voltageP', int32_t),
+                ('voltageN', int32_t),
+                ('filter', int32_t)]
+    _pack_ = 1
+
+
+class SETTINGS_D01_(Structure):
+    _fields_ = [('cnl', CHANNEL_D01_ * 16)]
+    _pack_ = 1
+
+
+class MODULE_D01_(Structure):
+    _fields_ = [('smt', STANDART_MODULE_TASK),
+                ('data', SETTINGS_D01_)]
+    _pack_ = 1
+    setCheckSumm=setCheckSumm
+
+
+modules=[MODULE_SC01,MODULE_AD32,MODULE_A01_,MODULE_IC06,MODULE_D01_]
 #print ctypes.c_uint32.from_buffer_copy(modules[0].__name__.split("_")[-1]).value
 modules={i.__name__.split("_", 1)[-1]:i for i in modules}
 

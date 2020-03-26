@@ -35,13 +35,18 @@ import sys
 import time
 from tncommon import *
 
-GET_ID=int("41",16)
-GET_TASK=int("42",16)
-GET_STATUS=int("40",16)
 
-GET_EX_COMMAND_FROM_PC=int("0x09",16)
-GET_EX_DATA_FROM_PC=int("0x08",16)
-GET_EX_DATA_TO_PC=int("0x48",16)
+
+#MIB_GET_ID = 0x41
+
+GET_ID    =0x41
+GET_TASK  =0x42
+SET_TASK  =0x02
+GET_STATUS=0x40
+
+GET_EX_COMMAND_FROM_PC =0x09
+GET_EX_DATA_FROM_PC    =0x08
+GET_EX_DATA_TO_PC      =0x48
 
 le_uint8_t=ctypes.c_uint8
 le_uint16_t=ctypes.c_uint16
@@ -53,26 +58,27 @@ uint32_t=ctypes.c_uint32
 MAX_DEVICES_NUMBER  =  3
 MAX_SLOTS_NUMBER    =  10
 
-CBW_SIG=int("4243",16)
-CSW_SIG=int("5343",16)
-DBW_SIG=int("4244",16)
-DSW_SIG=int("5344",16)
+CBW_SIG=0x4243
+CSW_SIG=0x5343
+DBW_SIG=0x4244
+DSW_SIG=0x5344
 
 
-NO_DATA=1
+NO_DATA=0
 PC_TH3=0    #PC->T╨Э3
-TH3_PC=1<<7  #T╨Э3->PC
+TH3_PC=0x80  #T╨Э3->PC
 
 
-RW_EXCHANGE_BUFFER=int("10",16)
-MODULE_REQUEST_=int("11",16)
+TASK_MEMORY_REQUEST 	= 0x01
+RW_EXCHANGE_BUFFER      = 0x10
+MODULE_REQUEST_         = 0x11
 PING = 0
 
 
 MAX_INPUT_BUFFER_SIZE 	= 65536
-COMMAND_BLOCK_WRAPPER_SIGNATURE = int("4243",16)
+COMMAND_BLOCK_WRAPPER_SIGNATURE = 0x4243
 LUN_ANY = 0
-MIB_GET_ID = int("41",16)
+
 
 
 def show_progress(value,max):
@@ -144,7 +150,31 @@ class MODULE_IDENT(Structure):
     def get_module_task(self):
         if self.number == -1:
             raise module_error("error")
+        #print type(self.device)
         return self.device.get_module_task(self.number)
+
+    def set_module_task(self,task_data):
+        status =self.device.wr_exchange_buffer(task_data)
+        if status != 0:
+            return None,status
+        if type(task_data)==str :
+            sizeof_data=len(task_data)
+        else :
+            sizeof_data = sizeof(task_data)
+
+        cxw = MODULE_REQUEST(SET_TASK, self.number, sizeof_data)
+        s, status = self.device.send_request(MODULE_REQUEST_, params=cxw)
+        if status!=0:
+            return None,status
+
+        s, error_code=self.get_status()
+        if error_code != 0:
+            return None,error_code
+
+        # g_ExBuffer - буфер данных 1024 байта (0x48 отправить данные компьютеру ) (0x08 принять данные с компьютера)
+        # g_ExCommand - буфер доп_команд 32 байта (0x09 считать доп команду)
+        return s, error_code
+
 
 
     def get_module_id(self):

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://I:/TN3_soft_full_source/TN3Lab/gdisk/TN3RealTime_xe8/tn3rt_source.cpp" charset="windows-1251" />
+  </component>
 </project>

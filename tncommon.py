@@ -49,29 +49,39 @@ def is_structure(obj):
     return 0
 
 
-def struct2txt(obj,N=0,txt=""):
+BIN_fr=0
+HEX_fr=1
+DEC_fr=2
+
+
+def struct2txt(obj,N=0,txt="",format=HEX_fr):
     #len(obj)
     #print obj._fields_
 
     if is_structure(obj):
         for i in obj._fields_:
             txt+= " "*N+i[0]+"\n"
-            
             #getattr(inst,i[0])
             attr=obj.__getattribute__(i[0])
-            txt=struct2txt(attr,N+1,txt)
+            txt=struct2txt(attr,N+1,txt,format)
             #print is_structure(inst.__dict__[i[0]])
             #print inst.__dict__[i[0]]
     elif hasattr(obj,"__len__"):
         index=0
         for attr in obj:
             txt+= " "*N+"["+str(index)+"] "+"\n"
-            txt=struct2txt(attr,N+1,txt)
+            txt=struct2txt(attr,N+1,txt,format)
             index+=1
     else :
-        txt=txt[0:-2]
-        num=30-(len(txt[txt.rfind("\n"):])-N)
-        txt+=" "*num+hex(obj)+"\n"
+        txt=txt[0:-1]
+        pos=txt.rfind("\n")                           #firt space compensation
+        num=40-(len(txt[0 if pos==-1 else pos:])-N) - (pos==-1)
+        if   format==BIN_fr:
+            txt+=" "*num+bin(obj)+"\n"
+        elif format==HEX_fr:
+            txt+=" "*num+hex(obj)+"\n"
+        elif format==DEC_fr:
+            txt+=" "*num+str(obj)+"\n"
         return txt 
     return txt
 
