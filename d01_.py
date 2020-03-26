@@ -18,7 +18,7 @@ from data_recive.d01__recive import *
 
 d=None
 count =0
-run_autodetection=False
+run_autodetection=True
 
 
 while (d is None ) and count<20 and run_autodetection:
@@ -45,7 +45,7 @@ for i in devices:
     #print i.saCtl[0]
 
     s=i.get_main_module(1024)
-    print ":".join("{:03d}".format(ord(c)) for c in s[0:712])
+    #print ":".join("{:03d}".format(ord(c)) for c in s[0:712])
     #print ":".join("{:03d}".format(ord(c)) for c in s[142:144])
     data_ip   = ".".join("{:d}".format(ord(c)) for c in s[160:164])
     data_port = int("".join("{:02x}".format(ord(c)) for c in s[142:144]),16)

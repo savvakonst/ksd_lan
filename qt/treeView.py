@@ -64,7 +64,7 @@ class TreeView(QTreeView):
                 txt=str(float(sum(data[i]))/len(data[i]))
             self.listOfValues[i].setText(txt)
 
-        print len(data[0])
+        #print len(data[0])
 
 
 

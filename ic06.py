@@ -32,7 +32,7 @@ if count>0:
 if run_autodetection:
     devices = [CONNECTED_DEVICE(csw=csw, address=k) for k, csw in d.items()]
 else:
-    devices=[CONNECTED_DEVICE(csw=4,address=('192.168.0.4', 4880))]
+    devices = [CONNECTED_DEVICE(csw=4,address=('192.168.0.4', 4880))]
 kk=0
 
 
@@ -244,6 +244,7 @@ for i in devices:
 
         setup0x20_reg(module, 2, 22)
         reg_0 = Reg_0(0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1)
+        print "hex(reg2value(reg_0))",hex(reg2value(reg_0))
         setup0x20_reg(module, reg2value(reg_0), 0)
         get0x20_reg(module,0)
         setup0x20_reg(module, 0, 22)

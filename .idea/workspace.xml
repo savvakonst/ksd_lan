@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbf6f415-9c91-43d3-ab65-0cd4aaba5e89" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/d01_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_recive/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_recive/d01__recive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inatall.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qt/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qt/d01_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qt/treeView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d01_.py" beforeDir="false" afterPath="$PROJECT_DIR$/d01_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ic06.py" beforeDir="false" afterPath="$PROJECT_DIR$/ic06.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tnbalancelib.py" beforeDir="false" afterPath="$PROJECT_DIR$/tnbalancelib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tnbalanceproto.py" beforeDir="false" afterPath="$PROJECT_DIR$/tnbalanceproto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tncommon.py" beforeDir="false" afterPath="$PROJECT_DIR$/tncommon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tnstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/tnstruct.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inatall.bat" beforeDir="false" afterPath="$PROJECT_DIR$/inatall.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qt/treeView.py" beforeDir="false" afterPath="$PROJECT_DIR$/qt/treeView.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +18,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tnbalancelib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
+            <state relative-caret-position="-1834">
               <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ic06.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/d01_.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+              <folding>
+                <element signature="e#159#185#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/socket.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="227" selection-start-line="227" selection-end-line="227" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qt/d01_.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="530">
+              <caret line="233" selection-start-line="233" selection-end-line="233" />
+              <folding>
+                <element signature="e#25#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tncommon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
+            <state relative-caret-position="971">
               <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
               <folding>
                 <element signature="e#24#103#0" expanded="true" />
@@ -49,40 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tnbalanceproto.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tnstruct.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3621">
+            <state relative-caret-position="971">
               <caret line="216" column="29" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qt/d01_.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-              <folding>
-                <element signature="e#25#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inatall.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -90,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qt/treeView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="476">
+              <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
               <folding>
                 <element signature="e#25#53#0" expanded="true" />
               </folding>
@@ -111,20 +111,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_recive/d01__recive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
+            <state relative-caret-position="428">
               <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
               <folding>
                 <element signature="e#25#45#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/threading.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13600">
-              <caret line="800" selection-start-line="800" selection-end-line="800" />
             </state>
           </provider>
         </entry>
@@ -140,7 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pSMT</find>
       <find>fnGetSrcAddr</find>
       <find>sockaddr</find>
       <find>saCtl</find>
@@ -170,6 +160,7 @@
       <find>80</find>
       <find>CxW</find>
       <find>192</find>
+      <find>setup0x21_reg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,7 +170,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tn_lan.py" />
-        <option value="$PROJECT_DIR$/ic06.py" />
         <option value="$PROJECT_DIR$/D01_.py" />
         <option value="$PROJECT_DIR$/tncommon.py" />
         <option value="$PROJECT_DIR$/qt.py" />
@@ -189,18 +179,19 @@
         <option value="I:/TN3_soft_full_source/TN3Lab/gdisk/TN3RealTime_xe8/tn3rt_main.cpp" />
         <option value="$PROJECT_DIR$/tnbalanceproto.py" />
         <option value="$PROJECT_DIR$/tnbalancelib.py" />
-        <option value="$PROJECT_DIR$/d01_.py" />
         <option value="$PROJECT_DIR$/data_recive/d01__recive.py" />
         <option value="$PROJECT_DIR$/qt/d01_.py" />
-        <option value="$PROJECT_DIR$/qt/treeView.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/inatall.bat" />
+        <option value="$PROJECT_DIR$/ic06.py" />
+        <option value="$PROJECT_DIR$/qt/treeView.py" />
+        <option value="$PROJECT_DIR$/d01_.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="501" />
-    <option name="y" value="159" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="265" />
+    <option name="y" value="486" />
     <option name="width" value="2796" />
     <option name="height" value="1782" />
   </component>
@@ -209,6 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,29 +211,12 @@
             <path>
               <item name="tn_lan" type="b2602c69:ProjectViewProjectNode" />
               <item name="tn_lan" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tn_lan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tn_lan" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="exe.win-amd64-2.7" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tn_lan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tn_lan" type="462c0819:PsiDirectoryNode" />
-              <item name="data_recive" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tn_lan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tn_lan" type="462c0819:PsiDirectoryNode" />
               <item name="qt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.treeView">
+  <component name="RunManager" selected="Python.d01_">
     <configuration name="d01_ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tn_lan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -328,7 +303,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tnstruct" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="ic06" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tn_lan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -340,7 +315,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tnstruct.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ic06.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -372,11 +347,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.treeView" />
         <item itemvalue="Python.d01_" />
+        <item itemvalue="Python.ic06" />
+        <item itemvalue="Python.treeView" />
         <item itemvalue="Python.d01_ (1)" />
         <item itemvalue="Python.d01__recive" />
-        <item itemvalue="Python.tnstruct" />
       </list>
     </recent_temporary>
   </component>
@@ -403,14 +378,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="335" y="107" width="1864" height="1188" extended-state="0" />
+    <frame x="255" y="200" width="1864" height="1188" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17738359" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17960088" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27272728" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27272728" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -522,13 +498,6 @@
     <entry file="file://I:/TN3_soft_full_source/TN3Lab/gdisk/TN3RealTime_xe8/tn3rt_thread_receive.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ic06.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="245" column="64" lean-forward="true" selection-start-line="245" selection-start-column="64" selection-end-line="245" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tn_lan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -590,88 +559,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d01_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
-          <folding>
-            <element signature="e#159#185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://I:/TN3_soft_full_source/TN3Lab/gdisk/include/tn3proto.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5729">
           <caret line="337" column="30" selection-start-line="337" selection-start-column="20" selection-end-line="337" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tnbalancelib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tncommon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
-          <folding>
-            <element signature="e#24#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tnbalanceproto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tnstruct.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="216" column="29" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qt/d01_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <element signature="e#25#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qt/treeView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <element signature="e#25#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_recive/d01__recive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
-          <folding>
-            <element signature="e#25#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,6 +573,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inatall.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tnbalanceproto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="971">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tnstruct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="971">
+          <caret line="216" column="29" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tncommon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="971">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+          <folding>
+            <element signature="e#24#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tnbalancelib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1834">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ic06.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -689,10 +625,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inatall.bat">
+    <entry file="file://$PROJECT_DIR$/data_recive/d01__recive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        <state relative-caret-position="428">
+          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+          <folding>
+            <element signature="e#25#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qt/treeView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding>
+            <element signature="e#25#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="227" selection-start-line="227" selection-end-line="227" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qt/d01_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+          <folding>
+            <element signature="e#25#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/d01_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="e#159#185#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
